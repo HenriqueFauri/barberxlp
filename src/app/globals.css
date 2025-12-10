@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 224 71% 4%; /* #030918 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
+    
+    --card: 240 0% 10%; /* #1A1A1A */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 221 83% 47%; /* Deep Blue for accents */
+    --primary-foreground: 0 0% 100%;
+    --neon-primary-rgb: 61, 137, 255;
+
+
+    --secondary: 225 39% 11%; /* #15203A */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 0% 10%;
+    --muted-foreground: 0 0% 75%; /* #BFBFBF */
+    
+    --accent: 221 83% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 0% 20%;
+    --input: 240 0% 20%;
+    --ring: 221 83% 57%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 0 0% 100%;
+    
+    --card: 240 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 221 83% 47%;
+    --primary-foreground: 0 0% 100%;
+    --neon-primary-rgb: 61, 137, 255;
+
+
+    --secondary: 225 39% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 0% 10%;
+    --muted-foreground: 0 0% 75%;
+    
+    --accent: 221 83% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 0% 20%;
+    --input: 240 0% 20%;
+    --ring: 221 83% 57%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 5px rgba(var(--neon-primary-rgb), 0.2), 0 0 10px rgba(var(--neon-primary-rgb), 0.2);
+  }
+  .neon-glow-strong {
+    box-shadow: 0 0 8px rgba(var(--neon-primary-rgb), 0.3), 0 0 20px rgba(var(--neon-primary-rgb), 0.3);
+  }
+}
+
+@layer components {
+  .pricing-card-bg {
+    background-color: hsl(var(--card));
+    background-image: radial-gradient(circle, hsl(var(--secondary) / 0.5) 0%, transparent 70%);
+  }
+}
