@@ -19,17 +19,7 @@ export function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="Twitter">
-                <Twitter className="h-5 w-5 text-muted-foreground hover:text-primary" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="GitHub">
-                <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="#" aria-label="Instagram">
+              <Link href="https://www.instagram.com/barberx.app/" aria-label="Instagram">
                 <Instagram className="h-5 w-5 text-muted-foreground hover:text-primary" />
               </Link>
             </Button>
