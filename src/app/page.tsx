@@ -227,7 +227,7 @@ export default function Home() {
       <section id="home" className="relative w-full pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-gradient-primary">
         <div className="container mx-auto px-4 md:px-6">
            <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-12">
-            <div className="flex flex-col justify-center space-y-4 text-center lg:text-left max-w-xl">
+            <div className="flex flex-col justify-center space-y-2 text-center lg:text-left max-w-xl">
               <motion.h1 
                 className="font-headline text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter !leading-tight"
                 variants={heroTitleVariant}
@@ -241,11 +241,10 @@ export default function Home() {
                 A solução inteligente para sua barbearia.
               </motion.p>
                <motion.div
-                className="mx-auto lg:mx-0 space-y-2 max-w-lg"
+                className="mx-auto lg:mx-0 max-w-lg"
                 variants={heroSubtitleVariant}
               >
                 <p className="text-foreground/80 font-light text-base md:text-lg">Agendamentos automáticos em menos de 30 segundos.</p>
-                <p className="text-foreground/80 font-light text-base md:text-lg">Gestão inteligente, a melhor apenas.</p>
               </motion.div>
               
               <motion.div 
