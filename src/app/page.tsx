@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, CheckSquare, Users, Calendar } from 'lucide-react';
+import { ArrowRight, BarChart2, BookUser, Calendar, Cake, CheckSquare, Gift, Heart, LineChart, Package, Star, Users, Wallet } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { PricingCard, PricingPlan } from '@/components/pricing-card';
 import { ContactForm } from '@/components/contact-form';
@@ -13,19 +13,49 @@ import { PurchaseFormModal, PurchaseDetails } from '@/components/purchase-form-m
 
 const features = [
     {
-      icon: <Calendar strokeWidth={2.5} className="h-10 w-10 text-primary" />,
+      icon: <Calendar strokeWidth={2.5} className="h-8 w-8 text-primary" />,
       title: "Agendamentos Simplificados",
       description: "Permita que seus clientes agendem horários online 24/7, reduzindo chamadas e mensagens.",
     },
     {
-      icon: <Users strokeWidth={2.5} className="h-10 w-10 text-primary" />,
+      icon: <Users strokeWidth={2.5} className="h-8 w-8 text-primary" />,
       title: "Gestão de Clientes",
       description: "Mantenha um histórico completo de seus clientes, serviços prestados e preferências.",
     },
     {
-      icon: <CheckSquare strokeWidth={2.5} className="h-10 w-10 text-primary" />,
-      title: "Organização Total",
-      description: "Controle suas finanças, horários e equipe em um único lugar, de forma prática e visual.",
+      icon: <Wallet strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Gestão Financeira",
+      description: "Controle suas finanças, comissões e fluxo de caixa de forma integrada e visual.",
+    },
+    {
+      icon: <Package strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Gestão de Estoque",
+      description: "Gerencie os produtos utilizados e vendidos na sua barbearia de forma simples e eficaz.",
+    },
+    {
+      icon: <BarChart2 strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Relatórios de Performance",
+      description: "Acesse relatórios detalhados sobre faturamento, serviços mais populares e muito mais.",
+    },
+    {
+      icon: <BookUser strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Lista de Espera",
+      description: "Otimize o tempo e não perca clientes com uma lista de espera inteligente e automática.",
+    },
+    {
+      icon: <Star strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Pesquisa de Satisfação",
+      description: "Envie pesquisas automáticas e monitore a satisfação dos seus clientes para melhorar sempre.",
+    },
+     {
+      icon: <Cake strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Aniversariantes",
+      description: "Fidelize clientes enviando mensagens automáticas e ofertas especiais no aniversário deles.",
+    },
+    {
+      icon: <Gift strokeWidth={2.5} className="h-8 w-8 text-primary" />,
+      title: "Programa de Fidelidade",
+      description: "Crie programas de pontos e recompensas para incentivar seus clientes a voltarem sempre.",
     },
 ];
 
@@ -93,8 +123,8 @@ const cardContainerVariant = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
     }
   }
 };
@@ -278,12 +308,14 @@ export default function Home() {
             {features.map((feature) => (
               <motion.div
                 key={feature.title}
-                className="group flex flex-col items-center text-center p-6 bg-card rounded-lg transition-all duration-300 ease-in-out feature-card"
+                className="group flex flex-col text-left p-6 rounded-xl transition-all duration-300 ease-in-out pricing-card-bg neon-glow hover:neon-glow-strong hover:-translate-y-1 hover:border-primary/50 border border-transparent"
                 variants={cardVariant}
               >
-                <div className="mb-4 p-4 bg-secondary/50 rounded-full">{feature.icon}</div>
-                <h3 className="text-xl font-headline font-bold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground font-light text-sm">{feature.description}</p>
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 p-2 bg-secondary/50 rounded-lg">{feature.icon}</div>
+                  <h3 className="text-lg font-headline font-bold">{feature.title}</h3>
+                </div>
+                <p className="text-muted-foreground font-light text-sm mt-4">{feature.description}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -386,19 +418,3 @@ export default function Home() {
     </motion.div>
   );
 }
-
-    
-
-    
-
-
-
-    
-
-    
-
-
-
-
-
-
