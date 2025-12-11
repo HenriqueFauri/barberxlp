@@ -15,6 +15,7 @@ const navLinks = [
   { href: '#sobre', label: 'Sobre' },
   { href: '#funcoes', label: 'Funções' },
   { href: '#precos', label: 'Preços' },
+  { href: '#faq', label: 'FAQ' },
 ];
 
 export function Header() {
@@ -100,8 +101,8 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="bg-secondary/95 backdrop-blur w-[80vw]">
-                <SheetHeader className="sr-only">
-                  <SheetTitle>Menu de Navegação</SheetTitle>
+                <SheetHeader>
+                  <SheetTitle className="sr-only">Menu de Navegação</SheetTitle>
                 </SheetHeader>
               <div className="p-4">
                 <Logo />

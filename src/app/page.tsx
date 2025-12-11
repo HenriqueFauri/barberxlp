@@ -9,6 +9,7 @@ import { ContactForm } from '@/components/contact-form';
 import { useState } from 'react';
 import { PricingToggle } from '@/components/ui/pricing-toggle';
 import { PurchaseFormModal, PurchaseDetails } from '@/components/purchase-form-modal';
+import { FaqAccordion } from '@/components/faq-accordion';
 
 
 const features = [
@@ -105,6 +106,37 @@ const pricingPlans: PricingPlan[] = [
   },
 ];
 
+const faqItems = [
+    {
+      question: "O que é o BarberX?",
+      answer: "Um sistema moderno para gestão de barbearias que organiza agendamentos, clientes e profissionais em um só lugar."
+    },
+    {
+      question: "O BarberX serve para qualquer barbearia?",
+      answer: "Sim. Ele é flexível e funciona para barbearias de qualquer tamanho."
+    },
+    {
+      question: "Preciso instalar algo?",
+      answer: "Não. Funciona direto no navegador, tanto no celular quanto no computador."
+    },
+    {
+      question: "Como funciona o pagamento?",
+      answer: "Você escolhe entre plano mensal, semestral ou anual e é direcionado ao WhatsApp para finalizar."
+    },
+    {
+      question: "Posso cancelar quando quiser?",
+      answer: "Sim, o cancelamento é simples e sem burocracia."
+    },
+    {
+      question: "Consigo testar antes?",
+      answer: "Sim. Disponibilizamos um período de teste gratuito."
+    },
+    {
+      question: "O BarberX ajuda a fidelizar clientes?",
+      answer: "Sim. O sistema envia lembretes, organiza histórico de serviços e entrega uma experiência moderna ao cliente."
+    }
+  ];
+
 
 // Animation Variants
 const sectionVariant = {
@@ -194,7 +226,7 @@ export default function Home() {
       {/* Hero Section */}
       <section id="home" className="relative w-full pt-24 md:pt-32 pb-16 md:pb-24 overflow-hidden bg-gradient-primary">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-12">
+           <div className="flex flex-col lg:flex-row items-center justify-center lg:gap-12">
             <div className="flex flex-col justify-center space-y-4 text-center lg:text-left max-w-xl">
               <motion.h1 
                 className="font-headline text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter !leading-tight"
@@ -203,13 +235,13 @@ export default function Home() {
                 BarberX
               </motion.h1>
               <motion.p 
-                className="mx-auto lg:mx-0 text-muted-foreground font-light text-base md:text-xl"
+                className="mx-auto lg:mx-0 text-muted-foreground font-light text-base md:text-xl max-w-lg"
                 variants={heroSubtitleVariant}
               >
                 A solução inteligente para sua barbearia.
               </motion.p>
                <motion.div
-                className="mx-auto lg:mx-0 space-y-2"
+                className="mx-auto lg:mx-0 space-y-2 max-w-lg"
                 variants={heroSubtitleVariant}
               >
                 <p className="text-foreground/80 font-light text-base md:text-lg">Agendamentos automáticos em menos de 30 segundos.</p>
@@ -364,10 +396,31 @@ export default function Home() {
         </div>
       </motion.section>
 
+      {/* FAQ Section */}
+      <motion.section
+        id="faq"
+        className="w-full py-16 md:py-24"
+        variants={sectionVariant}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl font-headline font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Perguntas Frequentes
+            </h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <FaqAccordion items={faqItems} />
+          </div>
+        </div>
+      </motion.section>
+
       {/* Contact Section */}
       <motion.section 
         id="contato" 
-        className="w-full py-16 md:py-24 lg:py-32"
+        className="w-full py-16 md:py-24 lg:py-32 bg-secondary/50"
         variants={sectionVariant}
         initial="hidden"
         whileInView="visible"
@@ -396,7 +449,7 @@ export default function Home() {
       </motion.section>
 
       {/* Final CTA */}
-      <section className="w-full py-20 bg-secondary/50">
+      <section className="w-full py-20 bg-secondary">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-4">
             <h2 className="text-3xl font-headline font-bold tracking-tighter md:text-4xl/tight">
